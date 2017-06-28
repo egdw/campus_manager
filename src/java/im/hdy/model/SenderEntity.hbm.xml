@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.SenderEntity" table="SENDER" schema="campus_travle">
+        <id name="senderId">
+            <column name="SENDER_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="senderName">
+            <column name="SENDER_NAME" sql-type="varchar(255)"/>
+        </property>
+        <property name="senderPhone">
+            <column name="SENDER_PHONE" sql-type="varchar(255)"/>
+        </property>
+        <property name="senderIdcard">
+            <column name="SENDER_IDCARD" sql-type="varchar(255)"/>
+        </property>
+        <property name="senderLocation1">
+            <column name="SENDER_LOCATION1" sql-type="bigint(6)"/>
+        </property>
+        <property name="senderLocation2">
+            <column name="SENDER_LOCATION2" sql-type="bigint(6)"/>
+        </property>
+        <property name="senderLocation3">
+            <column name="SENDER_LOCATION3" sql-type="bigint(6)"/>
+        </property>
+        <property name="senderLocationDescription">
+            <column name="SENDER_LOCATION_DESCRIPTION" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="senderPackageSize">
+            <column name="SENDER_PACKAGE_SIZE" sql-type="int(11)"/>
+        </property>
+        <property name="senderPackageCompany">
+            <column name="SENDER_PACKAGE_COMPANY" sql-type="int(11)"/>
+        </property>
+        <property name="senderPackageDescription">
+            <column name="SENDER_PACKAGE_DESCRIPTION" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="senderCreateDate">
+            <column name="SENDER_CREATE_DATE" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="senderIscomplete">
+            <column name="SENDER_ISCOMPLETE" sql-type="int(11)" not-null="true"/>
+        </property>
+        <many-to-one name="userByUserId" class="im.hdy.model.UserEntity" lazy="false">
+            <column name="USER_ID"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

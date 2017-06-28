@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/campus_travle</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <mapping resource="im/hdy/model/UserEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.UserEntity"/>
+        <mapping class="im.hdy.model.ProvicesEntity"/>
+        <mapping resource="im/hdy/model/ProvicesEntity.hbm.xml"/>
+        <mapping resource="im/hdy/model/UniversitysEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.UniversitysEntity"/>
+        <mapping resource="im/hdy/model/PackageCompanyEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.PackageCompanyEntity"/>
+        <mapping resource="im/hdy/model/PackageSizeEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.PackageSizeEntity"/>
+        <mapping resource="im/hdy/model/PostHouseEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.PostHouseEntity"/>
+        <mapping resource="im/hdy/model/ProvicesLocationEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.ProvicesLocationEntity"/>
+        <mapping resource="im/hdy/model/ReciverEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.ReciverEntity"/>
+        <mapping resource="im/hdy/model/SenderEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.SenderEntity"/>
+    </session-factory>
+</hibernate-configuration>
