@@ -6,8 +6,12 @@ import im.hdy.rsa.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.criteria.*;
+import java.util.List;
 
 /**
  * Created by hdy on 2017/6/27.
@@ -50,10 +54,20 @@ public class SenderService {
     /**
      * 根据用户id获取到相应的预约情况
      */
-    public Page<SenderEntity> getSenderByUserid(Long userid, int page) {
+    public List<SenderEntity> getSenderByUserid(final Long userid, int page) {
         PageRequest pageRequest = new PageRequest(page, Constants.SENDER_SERVICE_QUERY_NUM);
-        Page<SenderEntity> all = dao.findAll(pageRequest);
-        return all;
+        Page<SenderEntity> all = dao.findAll(new Specification<SenderEntity>() {
+            public Predicate toPredicate(Root<SenderEntity> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
+                Root<SenderEntity> entityRoot = criteriaQuery.from(SenderEntity.class);
+                Expression<Long> as = entityRoot.get("userByUserId").get("userid").as(Long.class);
+                Predicate predicate = criteriaBuilder.equal(as, userid);
+                return predicate;
+            }
+        }, pageRequest);
+        List<SenderEntity> content =
+                all.getContent();
+        return content;
+//        Page<SenderEntity> all = dao.findAll(pageRequest);
     }
 
 
@@ -61,5 +75,6 @@ public class SenderService {
         Iterable<SenderEntity> all = dao.findAll();
         return all;
     }
+
 
 }

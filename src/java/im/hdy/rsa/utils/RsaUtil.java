@@ -3,6 +3,7 @@ package im.hdy.rsa.utils;
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
+import java.math.BigInteger;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
@@ -24,7 +25,8 @@ public class RsaUtil {
             X509EncodedKeySpec pubX509 = new X509EncodedKeySpec(Base64.decodeBase64(publicKey.getBytes()));
             KeyFactory keyf = KeyFactory.getInstance("RSA", "BC");
             PublicKey pubKey = keyf.generatePublic(pubX509);
-            Cipher cipher = Cipher.getInstance("RSA");
+//            Cipher cipher = Cipher.getInstance("RSA");
+            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
             cipher.init(Cipher.ENCRYPT_MODE, pubKey);
             byte[] dataToEncrypt = data.getBytes("utf-8");
             byte[] encryptedData = cipher.doFinal(dataToEncrypt);
@@ -46,13 +48,18 @@ public class RsaUtil {
     public static String decryptData(String data, String privateKey) {
         try {
             Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+            privateKey = privateKey.replace(" ", "");
             PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(Base64.decodeBase64(privateKey.getBytes()));
+//            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(new BigInteger(mod, 16), new BigInteger(exp,16)Base64.decodeBase64(privateKey.getBytes()));
             KeyFactory keyf = KeyFactory.getInstance("RSA", "BC");
             PrivateKey privKey = keyf.generatePrivate(priPKCS8);
-            Cipher cipher = Cipher.getInstance("RSA");
+//            Cipher cipher = Cipher.getInstance("RSA");
+            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
             cipher.init(Cipher.DECRYPT_MODE, privKey);
             byte[] descryptData = Base64.decodeBase64(data);
             byte[] descryptedData = cipher.doFinal(descryptData);
+
+//            byte[] descryptedData = cipher.update(descryptData);
             String srcData = new String(descryptedData, "utf-8");
             return srcData;
         } catch (Exception e) {

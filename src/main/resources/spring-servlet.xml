@@ -34,6 +34,8 @@
             <mvc:exclude-mapping path="/proviceslocation/*"/>
             <mvc:exclude-mapping path="/package/*"/>
             <mvc:exclude-mapping path="/banner_ad/*"/>
+            <mvc:exclude-mapping path="/sender/*"/>
+            <mvc:exclude-mapping path="/reciver/*"/>
             <bean id="AuthSpringMVCInterceptor" class="im.hdy.Interceptor.AuthSpringMVCInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

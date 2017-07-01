@@ -19,17 +19,14 @@ public class UserService {
     private RedisTemplate redisTemplate;
 
 
-    public UserEntity getOne(Long id){
+    public UserEntity getOne(Long id) {
         return userDao.getOne(id);
     }
 
     public boolean login(Long id, String password) {
         UserEntity one = userDao.getOne(id);
-        System.out.println(one);
-        System.out.println(password);
         if (one != null) {
             String passwd = one.getPassword();
-            System.out.println(passwd);
             if (passwd.equals(password)) {
                 //说明密码正确
                 return true;

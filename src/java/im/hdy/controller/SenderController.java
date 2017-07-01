@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -59,7 +60,8 @@ public class SenderController {
     @RequestMapping(value = "/getSender", method = RequestMethod.GET)
     @ResponseBody
     public String getSender(Map<String, Object> requests, Integer page) {
-        Page<SenderEntity> entities = service.getSenderByUserid((Long) requests.get(Constants.REQUEST_USER_KEY), 0);
+        List<SenderEntity> entities = service.getSenderByUserid((Long) requests.get(Constants.REQUEST_USER_KEY), 0);
+//        Page<SenderEntity> entities = service.getSenderByUserid((long) 2015002531, 0);
         return JSON.toJSONString(entities);
     }
 

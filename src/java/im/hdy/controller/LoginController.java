@@ -35,8 +35,10 @@ public class LoginController {
         System.out.println("获取私钥:" + privateKey);
         if (privateKey != null) {
             String passwd = RsaUtil.decryptData(password, privateKey);
-            System.out.println(passwd);
+            System.out.println("passwd:" + passwd);
+            System.out.println("id:" + id);
             boolean flag = userService.login(id, passwd);
+            System.out.println("flag:" + flag);
             if (flag) {
                 //说明密码和账户正确
                 //确定用户可以登录后，生成sessionId和token
