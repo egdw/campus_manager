@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.StudentCampusAreaEntity" table="STUDENT_CAMPUS_AREA" schema="campus_travle">
+        <id name="campusAreaId">
+            <column name="CAMPUS_AREA_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="campusAreaName">
+            <column name="CAMPUS_AREA_NAME" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="campusId">
+            <column name="CAMPUS_ID" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

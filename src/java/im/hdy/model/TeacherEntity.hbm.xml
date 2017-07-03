@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.TeacherEntity" table="TEACHER" schema="campus_travle">
+        <id name="teacherId">
+            <column name="TEACHER_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="teacherName">
+            <column name="TEACHER_NAME" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="teacherContact">
+            <column name="TEACHER_CONTACT" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="teacherHome">
+            <column name="TEACHER_HOME" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="teacherEmail">
+            <column name="TEACHER_EMAIL" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="teacherBirthday">
+            <column name="TEACHER_BIRTHDAY" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="teacherIdcard">
+            <column name="TEACHER_IDCARD" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="teacherGruadl">
+            <column name="TEACHER_GRUADL" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="teacherProfession">
+            <column name="TEACHER_PROFESSION" sql-type="bigint(20)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

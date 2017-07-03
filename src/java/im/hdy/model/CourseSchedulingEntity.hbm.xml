@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.CourseSchedulingEntity" table="COURSE_SCHEDULING" schema="campus_travle">
+        <id name="courseSchedulingId">
+            <column name="COURSE_SCHEDULING_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="studentClassId">
+            <column name="STUDENT_CLASS_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="classId">
+            <column name="CLASS_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="teacherId">
+            <column name="TEACHER_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="classCycle">
+            <column name="CLASS_CYCLE" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="classSelection">
+            <column name="CLASS_SELECTION" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="week">
+            <column name="WEEK" sql-type="int(255)" not-null="true"/>
+        </property>
+        <property name="classDetail">
+            <column name="CLASS_DETAIL" sql-type="bigint(20)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

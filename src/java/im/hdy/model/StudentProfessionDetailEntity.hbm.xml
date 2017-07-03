@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.StudentProfessionDetailEntity" table="STUDENT_PROFESSION_DETAIL" schema="campus_travle">
+        <id name="studentProfessionDetailId">
+            <column name="STUDENT_PROFESSION_DETAIL_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="studentProfessionDetailName">
+            <column name="STUDENT_PROFESSION_DETAIL_NAME" sql-type="varchar(255)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.ClazzEntity" table="CLASS" schema="campus_travle">
+        <id name="classId">
+            <column name="CLASS_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="className">
+            <column name="CLASS_NAME" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="studentCollege">
+            <column name="STUDENT_COLLEGE" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

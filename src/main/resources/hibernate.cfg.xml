@@ -24,5 +24,29 @@
         <mapping class="im.hdy.model.ReciverEntity"/>
         <mapping resource="im/hdy/model/SenderEntity.hbm.xml"/>
         <mapping class="im.hdy.model.SenderEntity"/>
+        <mapping resource="im/hdy/model/BigMaintainEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.BigMaintainEntity"/>
+        <mapping class="im.hdy.model.ClazzEntity"/>
+        <mapping resource="im/hdy/model/ClazzEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.CourseSchedulingEntity"/>
+        <mapping resource="im/hdy/model/CourseSchedulingEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.SemesterEntity"/>
+        <mapping resource="im/hdy/model/SemesterEntity.hbm.xml"/>
+        <mapping resource="im/hdy/model/SmallMaintainEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.SmallMaintainEntity"/>
+        <mapping resource="im/hdy/model/StudentCampusEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.StudentCampusEntity"/>
+        <mapping resource="im/hdy/model/StudentCampusAreaEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.StudentCampusAreaEntity"/>
+        <mapping class="im.hdy.model.StudentClassEntity"/>
+        <mapping resource="im/hdy/model/StudentClassEntity.hbm.xml"/>
+        <mapping resource="im/hdy/model/StudentCollegeEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.StudentCollegeEntity"/>
+        <mapping class="im.hdy.model.StudentProfessionEntity"/>
+        <mapping resource="im/hdy/model/StudentProfessionEntity.hbm.xml"/>
+        <mapping resource="im/hdy/model/StudentProfessionDetailEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.StudentProfessionDetailEntity"/>
+        <mapping class="im.hdy.model.TeacherEntity"/>
+        <mapping resource="im/hdy/model/TeacherEntity.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
