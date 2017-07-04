@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.ReapirStatusEntity" table="REAPIR_STATUS" schema="campus_travle">
+        <id name="repairStatusId">
+            <column name="REPAIR_STATUS_ID" sql-type="int(11)"/>
+        </id>
+        <property name="repairStatusName">
+            <column name="REPAIR_STATUS_NAME" sql-type="varchar(255)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface ProvicesLocationDao extends JpaRepository<ProvicesLocationEntity, Long> {
 
-    public List<ProvicesLocationEntity> findProvicesLocationEntityByTypeEquals(byte type);
+    public List<ProvicesLocationEntity> findProvicesLocationEntityByTypeEquals(Integer type);
 
-    public List<ProvicesLocationEntity> findProvicesLocationEntityByPidEqualsAndTypeEquals(long pid, byte type);
+    public List<ProvicesLocationEntity> findProvicesLocationEntityByPidEqualsAndTypeEquals(long pid, Integer type);
 }

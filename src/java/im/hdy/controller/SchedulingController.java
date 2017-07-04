@@ -21,7 +21,7 @@ public class SchedulingController {
     private ScheduleService service;
 
 
-    @RequestMapping("/getAllSchedul")
+    @RequestMapping("/getSchedulByClassId")
     @ResponseBody
     public String getAllSchedul(Long id) {
         List<CourseSchedulingEntity> schedul = service.getAllSchedul(id);
@@ -30,17 +30,17 @@ public class SchedulingController {
 
     @RequestMapping("/getAllClassByColleage")
     @ResponseBody
-    public String getAllClassByColleage() {
-        List<ClazzEntity> colleage = service.getAllClassByColleage(1);
+    public String getAllClassByColleage(Integer id) {
+        List<ClazzEntity> colleage = service.getAllClassByColleage(id);
         return JSON.toJSONString(colleage);
     }
 
     //根据校区获取校区内相应区域
     @RequestMapping("/getStudentCampusAreaByStudentCampusId")
     @ResponseBody
-    public String getStudentCampusAreaByStudentCampusId() {
+    public String getStudentCampusAreaByStudentCampusId(Integer id) {
         List<StudentCampusAreaEntity> studentCampusAreaByStudentCampusId =
-                service.getStudentCampusAreaByStudentCampusId(2);
+                service.getStudentCampusAreaByStudentCampusId(id);
         return JSON.toJSONString(studentCampusAreaByStudentCampusId);
     }
 

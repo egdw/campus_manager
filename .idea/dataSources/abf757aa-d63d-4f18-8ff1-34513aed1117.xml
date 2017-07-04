@@ -33,781 +33,920 @@
     <table id="27" parent="2" name="PROVICES_LOCATION">
       <Comment>全国行政区划表</Comment>
     </table>
-    <table id="28" parent="2" name="RECIVER"/>
-    <table id="29" parent="2" name="SEMESTER"/>
-    <table id="30" parent="2" name="SENDER"/>
-    <table id="31" parent="2" name="SMALL_MAINTAIN"/>
-    <table id="32" parent="2" name="STUDENT_CAMPUS"/>
-    <table id="33" parent="2" name="STUDENT_CAMPUS_AREA"/>
-    <table id="34" parent="2" name="STUDENT_CLASS"/>
-    <table id="35" parent="2" name="STUDENT_COLLEGE"/>
-    <table id="36" parent="2" name="STUDENT_COURSE"/>
-    <table id="37" parent="2" name="STUDENT_PROFESSION"/>
-    <table id="38" parent="2" name="STUDENT_PROFESSION_DETAIL"/>
-    <table id="39" parent="2" name="STUDENT_SCORE"/>
-    <table id="40" parent="2" name="TEACHER"/>
-    <table id="41" parent="2" name="UNIVERSITYS"/>
-    <table id="42" parent="2" name="USER"/>
-    <column id="43" parent="19" name="AUTH_ID">
+    <table id="28" parent="2" name="REAPIR_STATUS"/>
+    <table id="29" parent="2" name="RECIVER"/>
+    <table id="30" parent="2" name="REPAIR_REPORT"/>
+    <table id="31" parent="2" name="SEMESTER"/>
+    <table id="32" parent="2" name="SENDER"/>
+    <table id="33" parent="2" name="SMALL_MAINTAIN"/>
+    <table id="34" parent="2" name="STUDENT_CAMPUS"/>
+    <table id="35" parent="2" name="STUDENT_CAMPUS_AREA"/>
+    <table id="36" parent="2" name="STUDENT_CLASS"/>
+    <table id="37" parent="2" name="STUDENT_COLLEGE"/>
+    <table id="38" parent="2" name="STUDENT_COURSE"/>
+    <table id="39" parent="2" name="STUDENT_PROFESSION"/>
+    <table id="40" parent="2" name="STUDENT_PROFESSION_DETAIL"/>
+    <table id="41" parent="2" name="STUDENT_SCORE"/>
+    <table id="42" parent="2" name="TEACHER"/>
+    <table id="43" parent="2" name="UNIVERSITYS"/>
+    <table id="44" parent="2" name="USER"/>
+    <column id="45" parent="19" name="AUTH_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="44" parent="19" name="AUTH_NAME">
+    <column id="46" parent="19" name="AUTH_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="45" parent="19" name="PRIMARY">
+    <key id="47" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AUTH_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="46" parent="20" name="BIG_MAINTAIN_ID">
+    <column id="48" parent="20" name="BIG_MAINTAIN_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="47" parent="20" name="BIG_MAINTAIN_NAME">
+    <column id="49" parent="20" name="BIG_MAINTAIN_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="48" parent="20" name="PRIMARY">
+    <key id="50" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>BIG_MAINTAIN_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="49" parent="21" name="CLASS_ID">
+    <column id="51" parent="21" name="CLASS_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="50" parent="21" name="CLASS_NAME">
+    <column id="52" parent="21" name="CLASS_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="51" parent="21" name="STUDENT_COLLEGE">
+    <column id="53" parent="21" name="STUDENT_COLLEGE">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="52" parent="21" name="STUDENT_COLLEGE">
+    <index id="54" parent="21" name="STUDENT_COLLEGE">
       <ColNames>STUDENT_COLLEGE</ColNames>
     </index>
-    <key id="53" parent="21" name="PRIMARY">
+    <key id="55" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CLASS_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="54" parent="21" name="CLASS_STUDENT_COLLEGE_FK">
+    <foreign-key id="56" parent="21" name="CLASS_STUDENT_COLLEGE_FK">
       <ColNames>STUDENT_COLLEGE</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>STUDENT_COLLEGE</RefTableName>
       <RefColNames>COLLEGE_ID</RefColNames>
     </foreign-key>
-    <column id="55" parent="22" name="COURSE_SCHEDULING_ID">
+    <column id="57" parent="22" name="COURSE_SCHEDULING_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="56" parent="22" name="STUDENT_CLASS_ID">
+    <column id="58" parent="22" name="STUDENT_CLASS_ID">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="57" parent="22" name="CLASS_ID">
+    <column id="59" parent="22" name="CLASS_ID">
       <Position>3</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="58" parent="22" name="TEACHER_ID">
+    <column id="60" parent="22" name="TEACHER_ID">
       <Position>4</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="59" parent="22" name="CLASS_CYCLE">
+    <column id="61" parent="22" name="CLASS_CYCLE">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="60" parent="22" name="CLASS_SELECTION">
+    <column id="62" parent="22" name="CLASS_SELECTION">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="61" parent="22" name="WEEK">
+    <column id="63" parent="22" name="WEEK">
       <Position>7</Position>
       <DataType>int(255)|0</DataType>
     </column>
-    <column id="62" parent="22" name="CLASS_DETAIL">
+    <column id="64" parent="22" name="CLASS_DETAIL">
       <Position>8</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <index id="63" parent="22" name="CLASS_DETAIL">
+    <index id="65" parent="22" name="CLASS_DETAIL">
       <ColNames>CLASS_DETAIL</ColNames>
     </index>
-    <index id="64" parent="22" name="CLASS_ID">
+    <index id="66" parent="22" name="CLASS_ID">
       <ColNames>CLASS_ID</ColNames>
     </index>
-    <index id="65" parent="22" name="STUDENT_CLASS_ID">
+    <index id="67" parent="22" name="STUDENT_CLASS_ID">
       <ColNames>STUDENT_CLASS_ID</ColNames>
     </index>
-    <index id="66" parent="22" name="TEACHER_ID">
+    <index id="68" parent="22" name="TEACHER_ID">
       <ColNames>TEACHER_ID</ColNames>
     </index>
-    <key id="67" parent="22" name="PRIMARY">
+    <key id="69" parent="22" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>COURSE_SCHEDULING_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="68" parent="22" name="STUDENT_CLASS_ID">
+    <foreign-key id="70" parent="22" name="STUDENT_CLASS_ID">
       <ColNames>STUDENT_CLASS_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>STUDENT_CLASS</RefTableName>
       <RefColNames>CLASS_ID</RefColNames>
     </foreign-key>
-    <foreign-key id="69" parent="22" name="CLASS_ID">
+    <foreign-key id="71" parent="22" name="CLASS_ID">
       <ColNames>CLASS_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>CLASS</RefTableName>
       <RefColNames>CLASS_ID</RefColNames>
     </foreign-key>
-    <foreign-key id="70" parent="22" name="TEACHER_ID">
+    <foreign-key id="72" parent="22" name="TEACHER_ID">
       <ColNames>TEACHER_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>TEACHER</RefTableName>
       <RefColNames>TEACHER_ID</RefColNames>
     </foreign-key>
-    <foreign-key id="71" parent="22" name="CLASS_DETAIL">
+    <foreign-key id="73" parent="22" name="CLASS_DETAIL">
       <ColNames>CLASS_DETAIL</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>STUDENT_PROFESSION_DETAIL</RefTableName>
       <RefColNames>STUDENT_PROFESSION_DETAIL_ID</RefColNames>
     </foreign-key>
-    <column id="72" parent="23" name="PACKAGE_COMPANY_ID">
+    <column id="74" parent="23" name="PACKAGE_COMPANY_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="73" parent="23" name="PACKAGE_COMPANY_NAME">
+    <column id="75" parent="23" name="PACKAGE_COMPANY_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="74" parent="23" name="PRIMARY">
+    <key id="76" parent="23" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PACKAGE_COMPANY_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="75" parent="24" name="PACKAGE_SIZE_ID">
+    <column id="77" parent="24" name="PACKAGE_SIZE_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="76" parent="24" name="PACKAGE_SIZE_DESCRIPTION">
+    <column id="78" parent="24" name="PACKAGE_SIZE_DESCRIPTION">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="77" parent="24" name="PRIMARY">
+    <key id="79" parent="24" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PACKAGE_SIZE_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="78" parent="25" name="POST_HOUSE_ID">
+    <column id="80" parent="25" name="POST_HOUSE_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="25" name="POST_HOUSE_NAME">
+    <column id="81" parent="25" name="POST_HOUSE_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="80" parent="25" name="POST_HOUSE_CONTACT">
+    <column id="82" parent="25" name="POST_HOUSE_CONTACT">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="81" parent="25" name="POST_HOUSE_LOCATION">
+    <column id="83" parent="25" name="POST_HOUSE_LOCATION">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="82" parent="25" name="PRIMARY">
+    <key id="84" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>POST_HOUSE_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="83" parent="26" name="id">
+    <column id="85" parent="26" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="84" parent="26" name="name">
+    <column id="86" parent="26" name="name">
       <Position>2</Position>
       <DataType>varchar(11)|0</DataType>
     </column>
-    <key id="85" parent="26" name="PRIMARY">
+    <key id="87" parent="26" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="86" parent="27" name="id">
+    <column id="88" parent="27" name="id">
       <Position>1</Position>
       <Comment>id</Comment>
       <DataType>bigint(6) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="87" parent="27" name="pid">
+    <column id="89" parent="27" name="pid">
       <Position>2</Position>
       <Comment>上级id</Comment>
       <DataType>bigint(6) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="88" parent="27" name="name">
+    <column id="90" parent="27" name="name">
       <Position>3</Position>
       <Comment>名称</Comment>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="89" parent="27" name="type">
+    <column id="91" parent="27" name="type">
       <Position>4</Position>
       <Comment>类型：0-省，1-市，2-县</Comment>
       <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <index id="90" parent="27" name="type">
+    <index id="92" parent="27" name="type">
       <ColNames>type</ColNames>
     </index>
-    <key id="91" parent="27" name="PRIMARY">
+    <key id="93" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="92" parent="28" name="RECIVER_ID">
+    <column id="94" parent="28" name="REPAIR_STATUS_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="95" parent="28" name="REPAIR_STATUS_NAME">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="96" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>REPAIR_STATUS_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="97" parent="29" name="RECIVER_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="93" parent="28" name="USERID">
+    <column id="98" parent="29" name="USERID">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="94" parent="28" name="POST_CODE">
+    <column id="99" parent="29" name="POST_CODE">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="95" parent="28" name="POST_COMPANY">
+    <column id="100" parent="29" name="POST_COMPANY">
       <Position>4</Position>
       <DataType>int(255)|0</DataType>
     </column>
-    <column id="96" parent="28" name="POST_HOUSE">
+    <column id="101" parent="29" name="POST_HOUSE">
       <Position>5</Position>
       <DataType>int(255)|0</DataType>
     </column>
-    <column id="97" parent="28" name="POST_MESSAGE">
+    <column id="102" parent="29" name="POST_MESSAGE">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="98" parent="28" name="POST_CREATEDATE">
+    <column id="103" parent="29" name="POST_CREATEDATE">
       <Position>7</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="99" parent="28" name="POST_LOCATION">
+    <column id="104" parent="29" name="POST_LOCATION">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <index id="100" parent="28" name="POST_COMPANY">
+    <index id="105" parent="29" name="POST_COMPANY">
       <ColNames>POST_COMPANY</ColNames>
     </index>
-    <index id="101" parent="28" name="POST_HOUSE">
+    <index id="106" parent="29" name="POST_HOUSE">
       <ColNames>POST_HOUSE</ColNames>
     </index>
-    <index id="102" parent="28" name="USERID">
+    <index id="107" parent="29" name="USERID">
       <ColNames>USERID</ColNames>
     </index>
-    <key id="103" parent="28" name="PRIMARY">
+    <key id="108" parent="29" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RECIVER_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="104" parent="28" name="RECIVER_USER_FK">
+    <foreign-key id="109" parent="29" name="RECIVER_USER_FK">
       <ColNames>USERID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>USER</RefTableName>
       <RefColNames>USERID</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="105" parent="28" name="RECIVER_PACKAGE_FACTORY_FK">
+    <foreign-key id="110" parent="29" name="RECIVER_PACKAGE_FACTORY_FK">
       <ColNames>POST_COMPANY</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>PACKAGE_COMPANY</RefTableName>
       <RefColNames>PACKAGE_COMPANY_ID</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="106" parent="28" name="RECIVER_PACKAGE_HOST_FK">
+    <foreign-key id="111" parent="29" name="RECIVER_PACKAGE_HOST_FK">
       <ColNames>POST_HOUSE</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>POST_HOUSE</RefTableName>
       <RefColNames>POST_HOUSE_ID</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="107" parent="29" name="SEMESTER_ID">
+    <column id="112" parent="30" name="REPAIRID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="113" parent="30" name="STUDENT_CAMPUS_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="114" parent="30" name="STUDENT_CAMPUS_AREA">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="115" parent="30" name="BIG_MAINTAIN_ID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="116" parent="30" name="SMALL_MAINTAIN_ID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="117" parent="30" name="REPAIR_PHONE">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="118" parent="30" name="REPAIR_DETAIL_LOCATION">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="119" parent="30" name="REPAIR_DETAIL_DESCRPTION">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="120" parent="30" name="REPAIR_DETAIL_PIC">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="121" parent="30" name="REPAIR_USER_ID">
+      <Position>10</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="122" parent="30" name="REPAIR_WORKER_ID">
+      <Position>11</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="123" parent="30" name="REPAIR_CREATEDATA">
+      <Position>12</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="124" parent="30" name="REPAIR_STATUS">
+      <Position>13</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="125" parent="30" name="BIG_MAINTAIN_ID">
+      <ColNames>BIG_MAINTAIN_ID</ColNames>
+    </index>
+    <index id="126" parent="30" name="REPAIR_STATUS">
+      <ColNames>REPAIR_STATUS</ColNames>
+    </index>
+    <index id="127" parent="30" name="REPAIR_USER_ID">
+      <ColNames>REPAIR_USER_ID</ColNames>
+    </index>
+    <index id="128" parent="30" name="REPAIR_WORKER_ID">
+      <ColNames>REPAIR_WORKER_ID</ColNames>
+    </index>
+    <index id="129" parent="30" name="SMALL_MAINTAIN_ID">
+      <ColNames>SMALL_MAINTAIN_ID</ColNames>
+    </index>
+    <index id="130" parent="30" name="STUDENT_CAMPUS_AREA">
+      <ColNames>STUDENT_CAMPUS_AREA</ColNames>
+    </index>
+    <index id="131" parent="30" name="STUDENT_CAMPUS_ID">
+      <ColNames>STUDENT_CAMPUS_ID</ColNames>
+    </index>
+    <key id="132" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>REPAIRID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="133" parent="30" name="STUDENT_CAMPUS_ID">
+      <ColNames>STUDENT_CAMPUS_ID</ColNames>
+      <RefSchemaName>campus_travle</RefSchemaName>
+      <RefTableName>STUDENT_CAMPUS</RefTableName>
+      <RefColNames>CAMPUS_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="134" parent="30" name="STUDENT_CAMPUS_AREA">
+      <ColNames>STUDENT_CAMPUS_AREA</ColNames>
+      <RefSchemaName>campus_travle</RefSchemaName>
+      <RefTableName>STUDENT_CAMPUS_AREA</RefTableName>
+      <RefColNames>CAMPUS_AREA_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="135" parent="30" name="BIG_MAINTAIN_ID">
+      <ColNames>BIG_MAINTAIN_ID</ColNames>
+      <RefSchemaName>campus_travle</RefSchemaName>
+      <RefTableName>BIG_MAINTAIN</RefTableName>
+      <RefColNames>BIG_MAINTAIN_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="136" parent="30" name="SMALL_MAINTAIN_ID">
+      <ColNames>SMALL_MAINTAIN_ID</ColNames>
+      <RefSchemaName>campus_travle</RefSchemaName>
+      <RefTableName>SMALL_MAINTAIN</RefTableName>
+      <RefColNames>SMALL_MAINTAIN_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="137" parent="30" name="REPAIR_USER_ID">
+      <ColNames>REPAIR_USER_ID</ColNames>
+      <RefSchemaName>campus_travle</RefSchemaName>
+      <RefTableName>USER</RefTableName>
+      <RefColNames>USERID</RefColNames>
+    </foreign-key>
+    <foreign-key id="138" parent="30" name="REPAIR_WORKER_ID">
+      <ColNames>REPAIR_WORKER_ID</ColNames>
+      <RefSchemaName>campus_travle</RefSchemaName>
+      <RefTableName>USER</RefTableName>
+      <RefColNames>USERID</RefColNames>
+    </foreign-key>
+    <foreign-key id="139" parent="30" name="REPAIR_STATUS">
+      <ColNames>REPAIR_STATUS</ColNames>
+      <RefSchemaName>campus_travle</RefSchemaName>
+      <RefTableName>REAPIR_STATUS</RefTableName>
+      <RefColNames>REPAIR_STATUS_ID</RefColNames>
+    </foreign-key>
+    <column id="140" parent="31" name="SEMESTER_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="108" parent="29" name="SEMESTER_NAME">
+    <column id="141" parent="31" name="SEMESTER_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="109" parent="29" name="PRIMARY">
+    <key id="142" parent="31" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SEMESTER_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="110" parent="30" name="SENDER_ID">
+    <column id="143" parent="32" name="SENDER_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="111" parent="30" name="USER_ID">
+    <column id="144" parent="32" name="USER_ID">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="112" parent="30" name="SENDER_NAME">
+    <column id="145" parent="32" name="SENDER_NAME">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="113" parent="30" name="SENDER_PHONE">
+    <column id="146" parent="32" name="SENDER_PHONE">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="114" parent="30" name="SENDER_IDCARD">
+    <column id="147" parent="32" name="SENDER_IDCARD">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="115" parent="30" name="SENDER_LOCATION1">
+    <column id="148" parent="32" name="SENDER_LOCATION1">
       <Position>6</Position>
       <DataType>bigint(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="116" parent="30" name="SENDER_LOCATION2">
+    <column id="149" parent="32" name="SENDER_LOCATION2">
       <Position>7</Position>
       <DataType>bigint(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="117" parent="30" name="SENDER_LOCATION3">
+    <column id="150" parent="32" name="SENDER_LOCATION3">
       <Position>8</Position>
       <DataType>bigint(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="118" parent="30" name="SENDER_LOCATION_DESCRIPTION">
+    <column id="151" parent="32" name="SENDER_LOCATION_DESCRIPTION">
       <Position>9</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="119" parent="30" name="SENDER_PACKAGE_SIZE">
+    <column id="152" parent="32" name="SENDER_PACKAGE_SIZE">
       <Position>10</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="120" parent="30" name="SENDER_PACKAGE_COMPANY">
+    <column id="153" parent="32" name="SENDER_PACKAGE_COMPANY">
       <Position>11</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="121" parent="30" name="SENDER_PACKAGE_DESCRIPTION">
+    <column id="154" parent="32" name="SENDER_PACKAGE_DESCRIPTION">
       <Position>12</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="122" parent="30" name="SENDER_CREATE_DATE">
+    <column id="155" parent="32" name="SENDER_CREATE_DATE">
       <Position>13</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="123" parent="30" name="SENDER_ISCOMPLETE">
+    <column id="156" parent="32" name="SENDER_ISCOMPLETE">
       <Position>14</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="124" parent="30" name="USER_ID">
+    <index id="157" parent="32" name="USER_ID">
       <ColNames>USER_ID</ColNames>
     </index>
-    <key id="125" parent="30" name="PRIMARY">
+    <key id="158" parent="32" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SENDER_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="126" parent="30" name="sender_user">
+    <foreign-key id="159" parent="32" name="sender_user">
       <ColNames>USER_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>USER</RefTableName>
       <RefColNames>USERID</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="127" parent="31" name="SMALL_MAINTAIN_ID">
+    <column id="160" parent="33" name="SMALL_MAINTAIN_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="128" parent="31" name="SMALL_MAINTAIN_NAME">
+    <column id="161" parent="33" name="SMALL_MAINTAIN_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="129" parent="31" name="BIG_MAINTAIN_ID">
+    <column id="162" parent="33" name="BIG_MAINTAIN_ID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="130" parent="31" name="BIG_MAINTAIN_ID">
+    <index id="163" parent="33" name="BIG_MAINTAIN_ID">
       <ColNames>BIG_MAINTAIN_ID</ColNames>
     </index>
-    <key id="131" parent="31" name="PRIMARY">
+    <key id="164" parent="33" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SMALL_MAINTAIN_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="132" parent="31" name="SMALL_MAINTAIN_BIG_MAINTAIN_FK">
+    <foreign-key id="165" parent="33" name="SMALL_MAINTAIN_BIG_MAINTAIN_FK">
       <ColNames>BIG_MAINTAIN_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>BIG_MAINTAIN</RefTableName>
       <RefColNames>BIG_MAINTAIN_ID</RefColNames>
     </foreign-key>
-    <column id="133" parent="32" name="CAMPUS_ID">
+    <column id="166" parent="34" name="CAMPUS_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="134" parent="32" name="CAMPUS_NAME">
+    <column id="167" parent="34" name="CAMPUS_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="135" parent="32" name="PRIMARY">
+    <key id="168" parent="34" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CAMPUS_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="136" parent="33" name="CAMPUS_AREA_ID">
+    <column id="169" parent="35" name="CAMPUS_AREA_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="137" parent="33" name="CAMPUS_AREA_NAME">
+    <column id="170" parent="35" name="CAMPUS_AREA_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="138" parent="33" name="CAMPUS_ID">
+    <column id="171" parent="35" name="CAMPUS_ID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="139" parent="33" name="CAMPUS_ID">
+    <index id="172" parent="35" name="CAMPUS_ID">
       <ColNames>CAMPUS_ID</ColNames>
     </index>
-    <key id="140" parent="33" name="PRIMARY">
+    <key id="173" parent="35" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CAMPUS_AREA_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="141" parent="33" name="CAMPUS_AREA_CAMPUS_FK">
+    <foreign-key id="174" parent="35" name="CAMPUS_AREA_CAMPUS_FK">
       <ColNames>CAMPUS_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>STUDENT_CAMPUS</RefTableName>
       <RefColNames>CAMPUS_ID</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="142" parent="34" name="CLASS_ID">
+    <column id="175" parent="36" name="CLASS_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="143" parent="34" name="CLASS_NAME">
+    <column id="176" parent="36" name="CLASS_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="144" parent="34" name="CAMPUS_AREA">
+    <column id="177" parent="36" name="CAMPUS_AREA">
       <Position>3</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <index id="145" parent="34" name="CAMPUS_AREA">
+    <index id="178" parent="36" name="CAMPUS_AREA">
       <ColNames>CAMPUS_AREA</ColNames>
     </index>
-    <key id="146" parent="34" name="PRIMARY">
+    <key id="179" parent="36" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CLASS_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="147" parent="34" name="CLASS_CAMPUS_AREA_FK">
+    <foreign-key id="180" parent="36" name="CLASS_CAMPUS_AREA_FK">
       <ColNames>CAMPUS_AREA</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>STUDENT_CAMPUS_AREA</RefTableName>
       <RefColNames>CAMPUS_AREA_ID</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="148" parent="35" name="COLLEGE_ID">
+    <column id="181" parent="37" name="COLLEGE_ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="149" parent="35" name="COLLEGE_NAME">
+    <column id="182" parent="37" name="COLLEGE_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="150" parent="35" name="PRIMARY">
+    <key id="183" parent="37" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>COLLEGE_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="151" parent="36" name="COURSEID">
+    <column id="184" parent="38" name="COURSEID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="152" parent="36" name="COURSE_NAME">
+    <column id="185" parent="38" name="COURSE_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="153" parent="36" name="COURSE_CREDIT">
+    <column id="186" parent="38" name="COURSE_CREDIT">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <key id="154" parent="36" name="PRIMARY">
+    <key id="187" parent="38" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>COURSEID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="155" parent="37" name="PROFESSION_ID">
+    <column id="188" parent="39" name="PROFESSION_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="156" parent="37" name="PROFESSION_NAME">
+    <column id="189" parent="39" name="PROFESSION_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="157" parent="37" name="COLLEGE_ID">
+    <column id="190" parent="39" name="COLLEGE_ID">
       <Position>3</Position>
       <DataType>int(20)|0</DataType>
     </column>
-    <index id="158" parent="37" name="COLLEGE_ID">
+    <index id="191" parent="39" name="COLLEGE_ID">
       <ColNames>COLLEGE_ID</ColNames>
     </index>
-    <key id="159" parent="37" name="PRIMARY">
+    <key id="192" parent="39" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PROFESSION_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="160" parent="37" name="PROFESSION_COLLAGE">
+    <foreign-key id="193" parent="39" name="PROFESSION_COLLAGE">
       <ColNames>COLLEGE_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>STUDENT_COLLEGE</RefTableName>
       <RefColNames>COLLEGE_ID</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="161" parent="38" name="STUDENT_PROFESSION_DETAIL_ID">
+    <column id="194" parent="40" name="STUDENT_PROFESSION_DETAIL_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="162" parent="38" name="STUDENT_PROFESSION_DETAIL_NAME">
+    <column id="195" parent="40" name="STUDENT_PROFESSION_DETAIL_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="163" parent="38" name="PRIMARY">
+    <key id="196" parent="40" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>STUDENT_PROFESSION_DETAIL_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="164" parent="39" name="SCORE_ID">
+    <column id="197" parent="41" name="SCORE_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="165" parent="39" name="STUDENT_PROFESSION_ID">
+    <column id="198" parent="41" name="STUDENT_PROFESSION_ID">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="166" parent="39" name="STUDENT_USER_ID">
+    <column id="199" parent="41" name="STUDENT_USER_ID">
       <Position>3</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="167" parent="39" name="SCORE_NUM">
+    <column id="200" parent="41" name="SCORE_NUM">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="168" parent="39" name="SEMESTER_ID">
+    <column id="201" parent="41" name="SEMESTER_ID">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="169" parent="39" name="SEMESTER_ID">
+    <index id="202" parent="41" name="SEMESTER_ID">
       <ColNames>SEMESTER_ID</ColNames>
     </index>
-    <index id="170" parent="39" name="STUDENT_PROFESSION_ID">
+    <index id="203" parent="41" name="STUDENT_PROFESSION_ID">
       <ColNames>STUDENT_PROFESSION_ID</ColNames>
     </index>
-    <index id="171" parent="39" name="STUDENT_USER_ID">
+    <index id="204" parent="41" name="STUDENT_USER_ID">
       <ColNames>STUDENT_USER_ID</ColNames>
     </index>
-    <key id="172" parent="39" name="PRIMARY">
+    <key id="205" parent="41" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SCORE_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="173" parent="39" name="SCORE_STUDENT_PROFESSION_FK">
+    <foreign-key id="206" parent="41" name="SCORE_STUDENT_PROFESSION_FK">
       <ColNames>STUDENT_PROFESSION_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>STUDENT_PROFESSION</RefTableName>
       <RefColNames>PROFESSION_ID</RefColNames>
     </foreign-key>
-    <foreign-key id="174" parent="39" name="SCORE_USER_ID_FK">
+    <foreign-key id="207" parent="41" name="SCORE_USER_ID_FK">
       <ColNames>STUDENT_USER_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>USER</RefTableName>
       <RefColNames>USERID</RefColNames>
     </foreign-key>
-    <foreign-key id="175" parent="39" name="SCORE_SEMESTER_FK">
+    <foreign-key id="208" parent="41" name="SCORE_SEMESTER_FK">
       <ColNames>SEMESTER_ID</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>SEMESTER</RefTableName>
       <RefColNames>SEMESTER_ID</RefColNames>
     </foreign-key>
-    <column id="176" parent="40" name="TEACHER_ID">
+    <column id="209" parent="42" name="TEACHER_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="177" parent="40" name="TEACHER_NAME">
+    <column id="210" parent="42" name="TEACHER_NAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="178" parent="40" name="TEACHER_CONTACT">
+    <column id="211" parent="42" name="TEACHER_CONTACT">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="179" parent="40" name="TEACHER_HOME">
+    <column id="212" parent="42" name="TEACHER_HOME">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="180" parent="40" name="TEACHER_EMAIL">
+    <column id="213" parent="42" name="TEACHER_EMAIL">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="181" parent="40" name="TEACHER_BIRTHDAY">
+    <column id="214" parent="42" name="TEACHER_BIRTHDAY">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
     </column>
-    <column id="182" parent="40" name="TEACHER_IDCARD">
+    <column id="215" parent="42" name="TEACHER_IDCARD">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="183" parent="40" name="TEACHER_GRUADL">
+    <column id="216" parent="42" name="TEACHER_GRUADL">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="184" parent="40" name="TEACHER_PROFESSION">
+    <column id="217" parent="42" name="TEACHER_PROFESSION">
       <Position>9</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <index id="185" parent="40" name="TEACHER_PROFESSION">
+    <index id="218" parent="42" name="TEACHER_PROFESSION">
       <ColNames>TEACHER_PROFESSION</ColNames>
     </index>
-    <key id="186" parent="40" name="PRIMARY">
+    <key id="219" parent="42" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>TEACHER_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="187" parent="40" name="TEACHER_PROFESSION_FK">
+    <foreign-key id="220" parent="42" name="TEACHER_PROFESSION_FK">
       <ColNames>TEACHER_PROFESSION</ColNames>
       <RefSchemaName>campus_travle</RefSchemaName>
       <RefTableName>STUDENT_PROFESSION</RefTableName>
       <RefColNames>PROFESSION_ID</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="188" parent="41" name="id">
+    <column id="221" parent="43" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="189" parent="41" name="name">
+    <column id="222" parent="43" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="190" parent="41" name="pid">
+    <column id="223" parent="43" name="pid">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <key id="191" parent="41" name="PRIMARY">
+    <key id="224" parent="43" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="192" parent="42" name="USERID">
+    <column id="225" parent="44" name="USERID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="193" parent="42" name="USERNAME">
+    <column id="226" parent="44" name="USERNAME">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="194" parent="42" name="PASSWORD">
+    <column id="227" parent="44" name="PASSWORD">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="195" parent="42" name="SEX">
+    <column id="228" parent="44" name="SEX">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="196" parent="42" name="DESCRIPTION">
+    <column id="229" parent="44" name="DESCRIPTION">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="197" parent="42" name="REGISTER_DATE">
+    <column id="230" parent="44" name="REGISTER_DATE">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="198" parent="42" name="REALNAME">
+    <column id="231" parent="44" name="REALNAME">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="199" parent="42" name="BIRTHDAY">
+    <column id="232" parent="44" name="BIRTHDAY">
       <Position>8</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="200" parent="42" name="PHONE">
+    <column id="233" parent="44" name="PHONE">
       <Position>9</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="201" parent="42" name="BAN_LOGIN">
+    <column id="234" parent="44" name="BAN_LOGIN">
       <Position>10</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="202" parent="42" name="LAST_LOGIN_TIME">
+    <column id="235" parent="44" name="LAST_LOGIN_TIME">
       <Position>11</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="203" parent="42" name="IMAGE">
+    <column id="236" parent="44" name="IMAGE">
       <Position>12</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="204" parent="42" name="PRIMARY">
+    <key id="237" parent="44" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>USERID</ColNames>
       <Primary>1</Primary>

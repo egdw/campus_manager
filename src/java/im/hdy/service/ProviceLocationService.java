@@ -27,17 +27,16 @@ public class ProviceLocationService {
      * @return
      */
     public List<ProvicesLocationEntity> getAllProvice() {
-        List<ProvicesLocationEntity> provices = locationDao.findProvicesLocationEntityByTypeEquals((byte) 0);
+        List<ProvicesLocationEntity> provices = locationDao.findProvicesLocationEntityByTypeEquals(0);
         return provices;
     }
 
     /**
-     * @param pid  上级省份的id号
-     * @param type = 1
-     *             市级
+     * @param pid 上级省份的id号
+     *            市级
      */
     public List<ProvicesLocationEntity> getAllCity(long pid) {
-        List<ProvicesLocationEntity> provicesLocationEntityByPidEqualsAndTypeEquals = locationDao.findProvicesLocationEntityByPidEqualsAndTypeEquals(pid, (byte) 1);
+        List<ProvicesLocationEntity> provicesLocationEntityByPidEqualsAndTypeEquals = locationDao.findProvicesLocationEntityByPidEqualsAndTypeEquals(pid, 1);
         return provicesLocationEntityByPidEqualsAndTypeEquals;
     }
 
@@ -45,11 +44,10 @@ public class ProviceLocationService {
     /**
      * 上级城市的id
      *
-     * @param pidb
      * @return
      */
     public List<ProvicesLocationEntity> getAllCountry(long pid) {
-        List<ProvicesLocationEntity> provicesLocationEntityByPidEqualsAndTypeEquals = locationDao.findProvicesLocationEntityByPidEqualsAndTypeEquals(pid, (byte) 2);
+        List<ProvicesLocationEntity> provicesLocationEntityByPidEqualsAndTypeEquals = locationDao.findProvicesLocationEntityByPidEqualsAndTypeEquals(pid, 2);
         return provicesLocationEntityByPidEqualsAndTypeEquals;
     }
 }

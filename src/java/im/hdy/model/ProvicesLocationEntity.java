@@ -3,7 +3,7 @@ package im.hdy.model;
 import javax.persistence.*;
 
 /**
- * Created by hdy on 2017/6/27.
+ * Created by hdy on 2017/7/3.
  */
 @Entity
 @Table(name = "PROVICES_LOCATION", schema = "campus_travle", catalog = "")

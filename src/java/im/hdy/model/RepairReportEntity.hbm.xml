@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.RepairReportEntity" table="REPAIR_REPORT" schema="campus_travle">
+        <id name="repairid">
+            <column name="REPAIRID" sql-type="bigint(20)"/>
+        </id>
+        <property name="studentCampusId">
+            <column name="STUDENT_CAMPUS_ID" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="studentCampusArea">
+            <column name="STUDENT_CAMPUS_AREA" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="bigMaintainId">
+            <column name="BIG_MAINTAIN_ID" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="smallMaintainId">
+            <column name="SMALL_MAINTAIN_ID" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="repairPhone">
+            <column name="REPAIR_PHONE" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="repairDetailLocation">
+            <column name="REPAIR_DETAIL_LOCATION" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="repairDetailDescrption">
+            <column name="REPAIR_DETAIL_DESCRPTION" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="repairDetailPic">
+            <column name="REPAIR_DETAIL_PIC" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="repairUserId">
+            <column name="REPAIR_USER_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="repairWorkerId">
+            <column name="REPAIR_WORKER_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="repairCreatedata">
+            <column name="REPAIR_CREATEDATA" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="repairStatus">
+            <column name="REPAIR_STATUS" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
