@@ -2,7 +2,9 @@ package im.hdy.Interceptor;
 
 import com.alibaba.fastjson.JSON;
 import im.hdy.exception.Status;
+import im.hdy.model.UserAuthrityEntity;
 import im.hdy.rsa.utils.Constants;
+import im.hdy.service.AuthService;
 import im.hdy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -20,6 +22,8 @@ import java.io.PrintWriter;
 public class AuthSpringMVCInterceptor implements HandlerInterceptor {
     @Autowired
     private UserService userService;
+    @Autowired
+    private AuthService authService;
 
     /**
      * 在Controller处理之前进行调用
@@ -59,6 +63,17 @@ public class AuthSpringMVCInterceptor implements HandlerInterceptor {
 
     //这个方法只会在当前这个Interceptor的preHandle方法返回值为true的时候才会执行。postHandle是进行处理器拦截用的，它的执行时间是在处理器进行处理之后
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        //返回值是对的.下面就是判断当前这个账号是什么角色
+        Long userId = (Long) request.getAttribute(Constants.REQUEST_USER_KEY);
+        UserAuthrityEntity entity =
+                authService.getAuthByUserId(userId);
+        if (entity == null) {
+            //说明就是普通用户.普通学生
+        } else {
+            //说明是有其他身份的人
+            //把相应的角色信息存放到里面
+            request.setAttribute(Constants.USER_AUTH, entity.getAuthorityByAuthId().getAuthName());
+        }
     }
 
 

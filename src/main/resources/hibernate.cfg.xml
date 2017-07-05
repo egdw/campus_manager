@@ -52,5 +52,9 @@
         <mapping class="im.hdy.model.ReapirStatusEntity"/>
         <mapping resource="im/hdy/model/RepairReportEntity.hbm.xml"/>
         <mapping class="im.hdy.model.RepairReportEntity"/>
+        <mapping resource="im/hdy/model/UserAuthrityEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.UserAuthrityEntity"/>
+        <mapping resource="im/hdy/model/AuthorityEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.AuthorityEntity"/>
     </session-factory>
 </hibernate-configuration>
