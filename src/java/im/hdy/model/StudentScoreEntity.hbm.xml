@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.StudentScoreEntity" table="STUDENT_SCORE" schema="campus_travle">
+        <id name="scoreId">
+            <column name="SCORE_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="studentProfessionId">
+            <column name="STUDENT_PROFESSION_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="studentUserId">
+            <column name="STUDENT_USER_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="scoreNum">
+            <column name="SCORE_NUM" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="semesterId">
+            <column name="SEMESTER_ID" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

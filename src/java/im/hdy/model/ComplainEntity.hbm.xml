@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.ComplainEntity" table="COMPLAIN" schema="campus_travle">
+        <id name="complainId">
+            <column name="COMPLAIN_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="complainTitle">
+            <column name="COMPLAIN_TITLE" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="complainDescription">
+            <column name="COMPLAIN_DESCRIPTION" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="complainType">
+            <column name="COMPLAIN_TYPE" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="complainDate">
+            <column name="COMPLAIN_DATE" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="complainUserId">
+            <column name="COMPLAIN_USER_ID" sql-type="bigint(11)" not-null="true"/>
+        </property>
+        <property name="complainBigSupervisionId">
+            <column name="COMPLAIN_BIG_SUPERVISION_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="complainSmallSupervisionId">
+            <column name="COMPLAIN_SMALL_SUPERVISION_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

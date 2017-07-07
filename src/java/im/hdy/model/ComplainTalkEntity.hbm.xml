@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.ComplainTalkEntity" table="COMPLAIN_TALK" schema="campus_travle">
+        <id name="complainTalkId">
+            <column name="COMPLAIN_TALK_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="complainId">
+            <column name="COMPLAIN_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="complainTalkDate">
+            <column name="COMPLAIN_TALK_DATE" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="complainTalkDescription">
+            <column name="COMPLAIN_TALK_DESCRIPTION" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="complainTalkLove">
+            <column name="COMPLAIN_TALK_LOVE" sql-type="bigint(20)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

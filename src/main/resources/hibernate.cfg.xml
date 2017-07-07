@@ -60,5 +60,17 @@
         <mapping class="im.hdy.model.OneCardEntity"/>
         <mapping resource="im/hdy/model/OneCardConsumeEntity.hbm.xml"/>
         <mapping class="im.hdy.model.OneCardConsumeEntity"/>
+        <mapping resource="im/hdy/model/ComplainEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.ComplainEntity"/>
+        <mapping resource="im/hdy/model/ComplainDetailEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.ComplainDetailEntity"/>
+        <mapping resource="im/hdy/model/ComplainTalkEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.ComplainTalkEntity"/>
+        <mapping resource="im/hdy/model/ComplainTypeEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.ComplainTypeEntity"/>
+        <mapping resource="im/hdy/model/StudentCourseEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.StudentCourseEntity"/>
+        <mapping class="im.hdy.model.StudentScoreEntity"/>
+        <mapping resource="im/hdy/model/StudentScoreEntity.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

@@ -45,6 +45,7 @@
             <mvc:exclude-mapping path="/schedual/*"/>
             <mvc:exclude-mapping path="/reciver/*"/>
             <mvc:exclude-mapping path="/repair/*"/>
+            <mvc:exclude-mapping path="/complain/*"/>
             <bean id="AuthSpringMVCInterceptor" class="im.hdy.Interceptor.AuthSpringMVCInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
