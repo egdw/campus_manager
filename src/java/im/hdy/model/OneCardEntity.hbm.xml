@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.OneCardEntity" table="ONE_CARD" schema="campus_travle">
+        <id name="cardId">
+            <column name="CARD_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="userId">
+            <column name="USER_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="cardMoney">
+            <column name="CARD_MONEY" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="payPassword">
+            <column name="PAY_PASSWORD" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="lose">
+            <column name="LOSE" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

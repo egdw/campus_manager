@@ -6,6 +6,7 @@ import im.hdy.model.AuthorityEntity;
 import im.hdy.model.UserAuthrityEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
  * 权限相关服务类
  */
 @Service
+@Transactional
 public class AuthService {
 
     @Autowired
@@ -64,6 +66,11 @@ public class AuthService {
         entity.setAuthId(authId);
         UserAuthrityEntity save = userAuthDao.save(entity);
         return save;
+    }
+
+    public AuthorityEntity getOne(Integer id){
+        AuthorityEntity one = authDao.getOne(id);
+        return one;
     }
 
 }

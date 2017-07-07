@@ -2,6 +2,7 @@ package im.hdy.Interceptor;
 
 import com.alibaba.fastjson.JSON;
 import im.hdy.exception.Status;
+import im.hdy.model.AuthorityEntity;
 import im.hdy.model.UserAuthrityEntity;
 import im.hdy.rsa.utils.Constants;
 import im.hdy.service.AuthService;
@@ -72,7 +73,9 @@ public class AuthSpringMVCInterceptor implements HandlerInterceptor {
         } else {
             //说明是有其他身份的人
             //把相应的角色信息存放到里面
-            request.setAttribute(Constants.USER_AUTH, entity.getAuthorityByAuthId().getAuthName());
+            int entityAuthId = entity.getAuthId();
+            AuthorityEntity one = authService.getOne(entityAuthId);
+            request.setAttribute(Constants.USER_AUTH, one.getAuthName());
         }
     }
 

@@ -22,6 +22,6 @@ public interface RepairReportDao extends PagingAndSortingRepository<RepairReport
     int aceptOrComplete(Long repairId, Integer status);
 
     @Modifying
-    @Query("update RepairReportEntity as pe set pe.repairStatus=?1,pe.repairWorkerId = ?2 where re.repairid = ?3 ")
+    @Query("update RepairReportEntity as pe set pe.repairStatus=?1,pe.repairWorkerId = ?2 where pe.repairid= ?3 ")
     int updateRepairWorker(Integer status, Long userId, Long repairId);
 }

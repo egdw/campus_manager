@@ -5,16 +5,11 @@
 <hibernate-mapping>
 
     <class name="im.hdy.model.UserAuthrityEntity" table="USER_AUTHRITY" schema="campus_travle">
-        <composite-id mapped="true" class="im.hdy.model.UserAuthrityEntityPK">
-            <key-property name="userId">
-                <column name="USER_ID" sql-type="bigint(20)"/>
-            </key-property>
-            <key-property name="authId">
-                <column name="AUTH_ID" sql-type="int(11)"/>
-            </key-property>
-        </composite-id>
-        <many-to-one name="authorityByAuthId" class="im.hdy.model.AuthorityEntity">
-            <column name="AUTH_ID"/>
-        </many-to-one>
+        <id name="userId">
+            <column name="USER_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="authId">
+            <column name="AUTH_ID" sql-type="int(11)"/>
+        </property>
     </class>
 </hibernate-mapping>

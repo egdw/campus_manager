@@ -22,8 +22,10 @@ public class Constants {
 
     public static final String USER_AUTH = "USER_AUTH";
 
+    public static final int ONE_CARD_CONSUME_QUERT_NUM = 10;
 
-    public static String noAuth(){
-        return JSON.toJSONString(new Status(401,"没有权限"));
+
+    public static String noAuth() {
+        return JSON.toJSONString(new Status(401, "没有权限"));
     }
 }

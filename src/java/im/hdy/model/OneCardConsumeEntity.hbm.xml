@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="im.hdy.model.OneCardConsumeEntity" table="ONE_CARD_CONSUME" schema="campus_travle">
+        <id name="cardConsumeId">
+            <column name="CARD_CONSUME_ID" sql-type="bigint(20)"/>
+        </id>
+        <property name="comsumeMoney">
+            <column name="COMSUME_MONEY" sql-type="double(255,2)" precision="255" scale="2" not-null="true"/>
+        </property>
+        <property name="consumeTime">
+            <column name="CONSUME_TIME" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="consumeLocation">
+            <column name="CONSUME_LOCATION" sql-type="bigint(11)" not-null="true"/>
+        </property>
+        <property name="workerid">
+            <column name="WORKERID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="userId">
+            <column name="USER_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -56,5 +56,9 @@
         <mapping class="im.hdy.model.UserAuthrityEntity"/>
         <mapping resource="im/hdy/model/AuthorityEntity.hbm.xml"/>
         <mapping class="im.hdy.model.AuthorityEntity"/>
+        <mapping resource="im/hdy/model/OneCardEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.OneCardEntity"/>
+        <mapping resource="im/hdy/model/OneCardConsumeEntity.hbm.xml"/>
+        <mapping class="im.hdy.model.OneCardConsumeEntity"/>
     </session-factory>
 </hibernate-configuration>
