@@ -20,5 +20,8 @@
         <property name="complainTalkLove">
             <column name="COMPLAIN_TALK_LOVE" sql-type="bigint(20)" not-null="true"/>
         </property>
+        <property name="talkUserId">
+            <column name="TALK_USER_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

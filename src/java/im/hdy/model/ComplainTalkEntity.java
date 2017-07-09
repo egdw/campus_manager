@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by hdy on 2017/7/7.
+ * Created by hdy on 2017/7/9.
  */
 @Entity
 @Table(name = "COMPLAIN_TALK", schema = "campus_travle", catalog = "")
@@ -14,6 +14,7 @@ public class ComplainTalkEntity {
     private Timestamp complainTalkDate;
     private String complainTalkDescription;
     private Long complainTalkLove;
+    private Long talkUserId;
 
     @Id
     @Column(name = "COMPLAIN_TALK_ID", nullable = false)
@@ -65,6 +66,16 @@ public class ComplainTalkEntity {
         this.complainTalkLove = complainTalkLove;
     }
 
+    @Basic
+    @Column(name = "TALK_USER_ID", nullable = true)
+    public Long getTalkUserId() {
+        return talkUserId;
+    }
+
+    public void setTalkUserId(Long talkUserId) {
+        this.talkUserId = talkUserId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -80,6 +91,7 @@ public class ComplainTalkEntity {
             return false;
         if (complainTalkLove != null ? !complainTalkLove.equals(that.complainTalkLove) : that.complainTalkLove != null)
             return false;
+        if (talkUserId != null ? !talkUserId.equals(that.talkUserId) : that.talkUserId != null) return false;
 
         return true;
     }
@@ -91,6 +103,7 @@ public class ComplainTalkEntity {
         result = 31 * result + (complainTalkDate != null ? complainTalkDate.hashCode() : 0);
         result = 31 * result + (complainTalkDescription != null ? complainTalkDescription.hashCode() : 0);
         result = 31 * result + (complainTalkLove != null ? complainTalkLove.hashCode() : 0);
+        result = 31 * result + (talkUserId != null ? talkUserId.hashCode() : 0);
         return result;
     }
 }

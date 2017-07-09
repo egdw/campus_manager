@@ -139,7 +139,7 @@ public class ComplainService {
     }
 
     /**
-     *
+     * 添加浏览次数
      */
     public boolean addWatch(ComplainEntity entity) {
         ComplainDetailEntity detailEntity = complainDetailDao.findByComplainIdEquals(entity.getComplainId());
@@ -149,6 +149,17 @@ public class ComplainService {
             return true;
         }
         return false;
+    }
+
+
+    /**
+     * 获得
+     * @param id
+     * @return
+     */
+    public ComplainEntity getComplainOne(Long id) {
+        ComplainEntity one = complainDao.findOne(id);
+        return one;
     }
 
 }

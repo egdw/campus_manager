@@ -86,6 +86,26 @@ public class ComplainController {
         return JSON.toJSONString(entityPage);
     }
 
+
+    /**
+     * 添加评论
+     */
+    @RequestMapping(value = "/addComplainTalk", method = RequestMethod.POST)
+    public String addComplainTalk(Map<String, Object> map, @RequestParam(required = true) Long complainId, @RequestParam(required = true) String description) {
+        ComplainEntity one = service.getComplainOne(complainId);
+        if (one == null) {
+            return JSON.toJSONString(new Status(404, "没有找到"));
+        }
+        ComplainTalkEntity entity = new ComplainTalkEntity();
+        entity.setComplainTalkDate(new Timestamp(System.currentTimeMillis()));
+        entity.setComplainTalkDescription(description);
+        entity.setComplainTalkLove(0l);
+        entity.setTalkUserId((Long) map.get(Constants.REQUEST_USER_KEY));
+        entity.setComplainId(complainId);
+        ComplainTalkEntity talk = service.addComplainTalk(entity);
+        return JSON.toJSONString(talk);
+    }
+
     /**
      * 获取评论
      *
