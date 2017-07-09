@@ -129,22 +129,26 @@ public class ComplainService {
      */
     public boolean addLove(Long entity) {
         ComplainEntity entity1 = complainDao.findOne(entity);
-        ComplainDetailEntity detailEntity = complainDetailDao.findByComplainByComplainIdEquals(entity1);
+        ComplainDetailEntity detailEntity = complainDetailDao.findByComplainIdEquals(entity1.getComplainId());
         int love = detailEntity.getComplainLove() + 1;
-        int i = complainDetailDao.updateLove(love, entity1);
-        if(i>0){
+        int i = complainDetailDao.updateLove(love, entity1.getComplainId());
+        if (i > 0) {
             return true;
         }
         return false;
     }
 
     /**
-     * watch
+     *
      */
-    public void addWatch(ComplainEntity entity) {
-        ComplainDetailEntity detailEntity = complainDetailDao.findByComplainByComplainIdEquals(entity);
-        int love = (int) (detailEntity.getComplainWatch() + 1);
-        complainDetailDao.updateWatch(love, entity);
+    public boolean addWatch(ComplainEntity entity) {
+        ComplainDetailEntity detailEntity = complainDetailDao.findByComplainIdEquals(entity.getComplainId());
+        long love = detailEntity.getComplainWatch() + 1;
+        int i = complainDetailDao.updateWatch(love, entity.getComplainId());
+        if (i > 0) {
+            return true;
+        }
+        return false;
     }
 
 }

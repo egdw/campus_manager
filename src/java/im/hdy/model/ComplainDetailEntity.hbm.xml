@@ -8,14 +8,14 @@
         <id name="complainDetailId">
             <column name="COMPLAIN_DETAIL_ID" sql-type="bigint(20)"/>
         </id>
+        <property name="complainId">
+            <column name="COMPLAIN_ID" sql-type="bigint(20)" not-null="true"/>
+        </property>
         <property name="complainLove">
             <column name="COMPLAIN_LOVE" sql-type="int(11)" not-null="true"/>
         </property>
         <property name="complainWatch">
             <column name="COMPLAIN_WATCH" sql-type="bigint(20)" not-null="true"/>
         </property>
-        <many-to-one name="complainByComplainId" class="im.hdy.model.ComplainEntity">
-            <column name="COMPLAIN_ID" not-null="true"/>
-        </many-to-one>
     </class>
 </hibernate-mapping>

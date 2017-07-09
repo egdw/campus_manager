@@ -3,15 +3,15 @@ package im.hdy.model;
 import javax.persistence.*;
 
 /**
- * Created by hdy on 2017/7/7.
+ * Created by hdy on 2017/7/9.
  */
 @Entity
 @Table(name = "COMPLAIN_DETAIL", schema = "campus_travle", catalog = "")
 public class ComplainDetailEntity {
     private long complainDetailId;
+    private Long complainId;
     private Integer complainLove;
     private Long complainWatch;
-    private ComplainEntity complainByComplainId;
 
     @Id
     @Column(name = "COMPLAIN_DETAIL_ID", nullable = false)
@@ -21,6 +21,16 @@ public class ComplainDetailEntity {
 
     public void setComplainDetailId(long complainDetailId) {
         this.complainDetailId = complainDetailId;
+    }
+
+    @Basic
+    @Column(name = "COMPLAIN_ID", nullable = true)
+    public Long getComplainId() {
+        return complainId;
+    }
+
+    public void setComplainId(Long complainId) {
+        this.complainId = complainId;
     }
 
     @Basic
@@ -51,6 +61,7 @@ public class ComplainDetailEntity {
         ComplainDetailEntity that = (ComplainDetailEntity) o;
 
         if (complainDetailId != that.complainDetailId) return false;
+        if (complainId != null ? !complainId.equals(that.complainId) : that.complainId != null) return false;
         if (complainLove != null ? !complainLove.equals(that.complainLove) : that.complainLove != null) return false;
         if (complainWatch != null ? !complainWatch.equals(that.complainWatch) : that.complainWatch != null)
             return false;
@@ -61,18 +72,9 @@ public class ComplainDetailEntity {
     @Override
     public int hashCode() {
         int result = (int) (complainDetailId ^ (complainDetailId >>> 32));
+        result = 31 * result + (complainId != null ? complainId.hashCode() : 0);
         result = 31 * result + (complainLove != null ? complainLove.hashCode() : 0);
         result = 31 * result + (complainWatch != null ? complainWatch.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "COMPLAIN_ID", referencedColumnName = "COMPLAIN_ID")
-    public ComplainEntity getComplainByComplainId() {
-        return complainByComplainId;
-    }
-
-    public void setComplainByComplainId(ComplainEntity complainByComplainId) {
-        this.complainByComplainId = complainByComplainId;
     }
 }
