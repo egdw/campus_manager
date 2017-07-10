@@ -27,7 +27,7 @@ public class ComplainController {
     private ComplainService service;
 
     /**
-     * 工作人员添加操作
+     * 添加操作
      *
      * @param map
      * @param complainTitle
@@ -138,6 +138,7 @@ public class ComplainController {
             return JSON.toJSONString(new Status(500, "点赞失败"));
         }
     }
+
 
     @RequestMapping(value = "/my", method = RequestMethod.GET)
     public String getMyComplain(Integer page, Map<String, Object> map) {

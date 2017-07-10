@@ -23,10 +23,6 @@ public class CourseAndScoreController {
         ArrayList<StudentScoreEntity> lists = new ArrayList<StudentScoreEntity>();
         Random random = new Random();
         for (int i = 0; i < 20; i++) {
-//            StudentScoreEntity entity = new StudentScoreEntity();
-//            entity.setScoreId(i);
-//            entity.setScoreNum(random.nextInt(100));
-//            entity.set
         }
     }
 }
